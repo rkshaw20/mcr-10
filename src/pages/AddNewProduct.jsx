@@ -10,20 +10,10 @@ import {
   useStatStyles,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { Form } from 'react-router-dom';
 import { useDataContext } from '../context/DataContextProvider';
+import { useNavigate, } from 'react-router-dom';
 
-// id: 4,
-//       department: 'Clothing',
-//       name: "Women's Yoga Pants",
-//       description: 'High-quality yoga pants for maximum comfort during workouts.',
-//       price: 29.99,
-//       stock: 30,
-//       sku: 'CLOTH002',
-//       supplier: 'ActiveFit Apparel',
-//       delivered: 10,
-//       imageUrl:
-//         'https://images.meesho.com/images/products/7488175/5b8f3_512.webp',
+
 const AddNewProduct = () => {
   const initialValue = {
     department: '',
@@ -37,7 +27,8 @@ const AddNewProduct = () => {
     imageURL: '',
   };
   const [inputValue, setInputValue] = useState(initialValue);
-  const {dispatch}=useDataContext()
+  const {dispatch}=useDataContext();
+  const navigate=useNavigate()
 
   const handleInput = event => {
     setInputValue({ ...inputValue, [event.target.name]: event.target.value });
@@ -45,7 +36,7 @@ const AddNewProduct = () => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch({type:'ADD_NEW_PRODUCT',payload:inputValue})
-    
+    navigate('/')
     setInputValue(initialValue)
   };
 

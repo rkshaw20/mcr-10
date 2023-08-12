@@ -38,8 +38,7 @@ setSortValue((prev)=>e.target.value)
 const handleCheck=(e)=>{
 setLow(!low)
 }
-console.log(param);
-console.log(paramData);
+
 
 const dataSource = param ? paramData : data;
 

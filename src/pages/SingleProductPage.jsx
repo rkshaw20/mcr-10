@@ -12,17 +12,7 @@ const SingleProductPage = () => {
     if (!product) {
         return <div>Product not found!</div>;
     }
-    // id: 4,
-    // department: 'Clothing',
-    // name: "Women's Yoga Pants",
-    // description: 'High-quality yoga pants for maximum comfort during workouts.',
-    // price: 29.99,
-    // stock: 30,
-    // sku: 'CLOTH002',
-    // supplier: 'ActiveFit Apparel',
-    // delivered: 10,
-    // imageUrl:
-    //   'https://images.meesho.com/images/products/7488175/5b8f3_512.webp',
+   
     return (
         <Flex flexDir='column'>
             <Heading>{product.name}</Heading>

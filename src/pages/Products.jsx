@@ -5,6 +5,7 @@ import {
   Flex,
   Heading,
   Image,
+  Link,
   Select,
   Table,
   TableContainer,
@@ -17,7 +18,7 @@ import {
 } from '@chakra-ui/react';
 import { useDataContext } from '../context/DataContextProvider';
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link as ReachLink } from 'react-router-dom';
 
 const Products = () => {
   const { data } = useDataContext();
@@ -107,7 +108,7 @@ const sortedData =
                       h="100px"
                     />
                   </Td>
-                  <Td>{product.name}</Td>
+                  <Td>  <Link as={ReachLink} to={`/products/details/${product.id}`} >{product.name}</Link> </Td>
                   <Td>{product.description}</Td>
                   <Td>${product.price}</Td>
                   <Td>{product.stock}</Td>

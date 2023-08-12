@@ -12,6 +12,7 @@ import Layout from './components/Layout';
 import Departments from './pages/Departments';
 import Products from './pages/Products';
 import AddNewProduct from './pages/AddNewProduct';
+import SingleProductPage from './pages/SingleProductPage';
 
 const router=createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const router=createBrowserRouter([
       {path:'/departments',element:<Departments/>},
       {path:'/products',element:<Products/>},
       {path:'/products/:department',element:<Products/>},
-      {path:'/addNewProduct',element:<AddNewProduct/>}
+      {path:'/addNewProduct',element:<AddNewProduct/>},
+      {path:'/products/details/:productId', element:<SingleProductPage/>}
     ]
   }
 ])
